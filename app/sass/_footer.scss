@@ -1,0 +1,103 @@
+footer {
+  background-color: #003453;
+  padding: 25px 0 35px;
+  .flex-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @media #{$bp-large} {
+      justify-content: space-between;
+    }
+    .flex-footer-item {
+      flex-grow: 1;
+      padding: 0 60px;
+      @media #{$bp-large} {
+        flex-grow: 1 !important;
+        width: 33.33%;
+      }
+      @media #{$bp-small} {
+            width: 100%;
+            text-align: center;
+      }
+      &:first-child {
+        align-self: center;
+        padding-right: 10px;    
+        @media #{$bp-large} {
+          width: 100%;
+          padding-right: 60px;
+        }
+      }
+      &:nth-child(3) {
+        border: 1px solid #335c75;
+        border-bottom: none;
+        border-top: none;
+        flex-grow: 0;
+      }
+      &:nth-child(2) {
+        flex-grow: 0;
+      }
+      &:last-child {
+        flex-grow: 2;
+      }
+      .logo-foot {
+        font-size: 48px;
+        line-height: 65px;
+        b {
+          color: rgba(255, 255, 255, 0.36);
+          font-weight: 700;
+        }
+      }
+      h4 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        margin-top: 6px;
+        margin-bottom: 12px;
+        @media #{$bp-small} {
+              display: inline-block;
+              cursor: pointer;
+        }
+      }
+      .footer-list {
+        @media #{$bp-small} {
+              display: none;
+        }
+        li {
+          margin: 0 0 3px;
+          a {
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 23px;
+            color: #fff;
+            font-weight: 300;
+          }
+        }
+      }
+      .contacts {
+        @media #{$bp-small} {
+              display: none;
+        }
+        li {
+          position: relative;
+          padding-left: 33px;
+          margin: 0px 0 15px;
+          color: rgba(255, 255, 255, 0.47);
+          font-size: 14px;
+          line-height: 19px;
+          font-weight: 300;
+          @media #{$bp-small} {
+                display: inline-block;
+          }
+          &:first-child i {left:2px;}
+          i {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #ec6f06;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

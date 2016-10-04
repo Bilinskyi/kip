@@ -1,0 +1,52 @@
+.portf-block {
+  padding-top: 65px;
+  padding-bottom: 55px;
+  .row.slider-3 {
+    margin: 0;
+    width: 100.1%;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-bottom: 42px;
+    .owl-controls {
+      padding: 0;
+      margin: 0;
+    }
+    .owl-m {
+      margin: 0 0 0 1px;
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .title-2 {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        letter-spacing: 1.33px;
+        line-height: 33px;
+        padding-bottom: 20px;
+        @media #{$bp-large} {
+          font-size: 19px;
+          line-height: 24px;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 119px;
+          height: 4px;
+          background: #ec6f06;
+          margin-left: auto;
+          margin-right: auto;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

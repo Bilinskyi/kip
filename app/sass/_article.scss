@@ -1,0 +1,40 @@
+.article {
+  background-color: #f2f2f2;
+  padding-bottom: 42px;
+  @media #{$bp-xx-large} {
+    padding: 0 90px 42px; 
+  }
+  .row {
+    padding: 60px 0 50px;
+  }
+  .title {
+    color: #ec6f06;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .date {
+    color: #003453;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 19px;
+    color: #666;
+  }
+  [class^=col] {
+    padding: 0 30px;
+    @media #{$bp-small} {
+      padding: 0 15px;
+    }
+    &:nth-child(2) {
+      border: 1px solid #d2d9dd;
+      border-top: none;
+      border-bottom: none;
+      @media #{$bp-small} {
+        border: none;
+        margin: 30px 0;
+      }
+    }
+  }
+}
