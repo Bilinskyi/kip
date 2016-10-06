@@ -1,4 +1,4 @@
-$button-width: 35px;
+$button-width: 65px;
 $button-height: 35px;
 $bar-thickness: 3px;
 $button-pad: 6px;
@@ -40,7 +40,7 @@ $button-trans-delay: 0.3s;
   left: $button-pad;
   right: $button-pad;
   height: $bar-thickness;
-  background: rgb(255,255,255);
+  background: #ec6f06;
 }
 
 .cmn-toggle-switch span::before,
@@ -50,7 +50,7 @@ $button-trans-delay: 0.3s;
   left: 0;
   width: 100%;
   height: $bar-thickness;
-  background-color: #fff;
+  background-color: #ec6f06;
   content: "";
 }
 
@@ -63,7 +63,7 @@ $button-trans-delay: 0.3s;
 }
 
 .cmn-toggle-switch__htx {
-  background-color: #ec6f06;
+  background-color: #fff;
 }
 
 .cmn-toggle-switch__htx span {
@@ -96,11 +96,13 @@ $button-trans-delay: 0.3s;
 .cmn-toggle-switch__htx.active span::before {
   top: 0;
   transform: rotate(45deg);
+  background: #fff;
 }
 
 .cmn-toggle-switch__htx.active span::after {
   bottom: 0;
   transform: rotate(-45deg);
+  background: #fff;
 }
 
 .cmn-toggle-switch__htx.active span::before,

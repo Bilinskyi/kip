@@ -133,16 +133,14 @@
   }
 
 }
-.slider {
+.main-flex {
   @media #{$bp-xx-large} {
-  .owl-prev {
-    left: 50px !important;
-    background: url(../img/left-arrow.png) no-repeat;
-  }
+    .bx-prev {
+      left: 50px !important;
+    }
 
-  .owl-next {
-    right: 50px !important;
-    background: url(../img/right-arrow.png) no-repeat;
+    .bx-next {
+      right: 50px !important;
+    }
   }
-}
 }

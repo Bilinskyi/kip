@@ -3,7 +3,19 @@
 :-moz-placeholder {font-family: 'Open Sans', sans-serif;color: rgba(236, 111, 6, 0.34);font-size: 14px;font-weight: 400;}
 :-ms-input-placeholder {font-family: 'Open Sans', sans-serif;color: rgba(236, 111, 6, 0.34);font-size: 14px;font-weight: 400;}
 
-* {box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+@media #{$bp-small} {
+ .form-search ::-webkit-input-placeholder {font-family: 'Open Sans', sans-serif;color: #fff;font-size: 14px;font-weight: 400;}
+ .form-search ::-moz-placeholder {font-family: 'Open Sans', sans-serif;color: #fff;font-size: 14px;font-weight: 400;}
+ .form-search :-moz-placeholder {font-family: 'Open Sans', sans-serif;color: #fff;font-size: 14px;font-weight: 400;}
+ .form-search :-ms-input-placeholder {font-family: 'Open Sans', sans-serif;color: #fff;font-size: 14px;font-weight: 400;}
+ 
+}
+
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 .inline-center{text-align: center;}
 .left-t{text-align: left;}
 .right-t{text-align: right;}
