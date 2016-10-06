@@ -309,7 +309,7 @@ header {
 				color: #000;
 				font-family: 'Open Sans', sans-serif;
 				@media #{$bp-small} {
-				      color: #fff;
+					color: #fff;
 				}
 			} 
 			[type=submit] {
@@ -347,21 +347,16 @@ header {
 					top: 0%;
 					z-index: 2;
 				}
-				&.act:hover {
+				&.act2 {
 					margin: 0;
-					left: 15px;
+					left: 0;
+					right: 0;
 					width: auto;
-					input:not([type=submit]) {
-						display: block;
-						position: absolute;
-						left: 0;
-						top: 40px;
-						z-index: 2;
-						padding-left: 15px;
-						background: #003453;
-					}
 					&:after {
 						z-index: 0;
+					}
+					[type=submit] {
+						margin-right: 15px;
 					}
 				}
 				input:not([type=submit]) {
@@ -383,6 +378,7 @@ header {
 		flex-wrap: wrap;
 		position: relative;
 		background: #fff;
+		box-shadow: 0 3px 11px 0 rgba(0,0,0,.26);
 		@media #{$bp-small} {
 			display: none;
 		}

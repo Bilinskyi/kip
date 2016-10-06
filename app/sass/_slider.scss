@@ -1,3 +1,14 @@
+.main-flex {
+  display: flex;
+  margin-bottom: 60px;
+  flex-direction: column;
+  @media #{$bp-small} {
+        flex-direction: column-reverse;
+  }
+  .container-fluid {
+    width: 100%;
+  }
+}
 .slider {
   position: relative;
   .wrapp {

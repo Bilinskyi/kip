@@ -155,7 +155,7 @@ $(document).ready(function(){
 		adaptiveHeight: true,
 		minSlides: item2,
 		maxSlides: item2,
-		infiniteLoop: false,
+		// infiniteLoop: false,
 		slideWidth: 1000,
 		responsive: true,
 		slideMargin: 0,
@@ -176,7 +176,7 @@ $(document).ready(function(){
 			adaptiveHeight: true,
 			minSlides: item2,
 			maxSlides: item2,
-			infiniteLoop: false,
+			// infiniteLoop: false,
 			slideWidth: 1000,
 			responsive: true,
 			slideMargin: 0,
@@ -191,6 +191,19 @@ $(document).ready(function(){
 		});
 	}
 
+
+	$('.grid i').on('click', function(e) {
+		e.preventDefault(); 
+		if (!$(this).hasClass('active') ) {
+			$('.sorting i').removeClass('active');
+			$(this).addClass('active');
+		};
+		if ( $('.grid i:last-child').hasClass('active') ) {
+			$('.catalog-list').addClass('list');
+		} else {
+			$('.catalog-list').removeClass('list');
+		}
+	});
 
 
 
