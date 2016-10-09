@@ -3,7 +3,7 @@
   margin-bottom: 60px;
   flex-direction: column;
   @media #{$bp-small} {
-        flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
   .container-fluid {
     width: 100%;
@@ -16,37 +16,31 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    &:after {
-      content: '';
-      display: block;
+    background: #003453;
+    .container-fluid {
       position: absolute;
-      bottom: 0;
+      max-width: 1920px;
+      margin: 0 auto;
+      top: 0;
       left: 0;
       right: 0;
-      width: 100%;
-      height: 25%;
-      background: url(../img/slider-after.png) center bottom no-repeat;
-      background-size: 100% 100%;
-      z-index: 2;
-    }
-    .border-stl {
-      width: 59.5%;
-      background-color: #003453;
-      position: relative;
-      padding: 3% 0 3% 25px;
-      z-index: 2;
-      @media #{$bp-medium} {
-        width: 50%;
-      }
-      @media #{$bp-xx-large} {
-        padding-left: 145px; 
+      height: 100%;
+      z-index: 5;
+      padding-right: 50%;
+      padding-left: 90px;
+      padding-top: 3%;
+      padding-bottom: 3%;
+      .center-y {
+        padding-right: 50%;
       }
       @media #{$bp-small} {
-        width: 100%;
+        position: static;
         text-align: center;
-        padding: 5% 15px;
-        &:after {
-          display: none !important;
+        padding: 20px 0;
+        .center-y {
+          position: static;
+          transform: none;
+          padding-right: 0;
         }
       }
       h1,
@@ -116,6 +110,42 @@
           font-size: 18px;
         }
       }
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 25%;
+      background: url(../img/slider-after.png) center bottom no-repeat;
+      background-size: 100% 100%;
+      z-index: 2;
+    }
+    .border-stl {
+      width: 59.5%;
+      background-color: #003453;
+      position: relative;
+      padding: 3% 0 3% 25px;
+      z-index: 2;
+      @media #{$bp-medium} {
+        width: 50%;
+      }
+      @media #{$bp-xx-large} {
+        padding-left: 145px; 
+      }
+      @media #{$bp-small} {
+        // width: 100%;
+        // text-align: center;
+        // padding: 5% 15px;
+        display: none;
+        &:after {
+          display: none !important;
+        }
+      }
+      
       &:after {
         content: '';
         display: block;
