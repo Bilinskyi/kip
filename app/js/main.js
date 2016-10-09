@@ -12,6 +12,7 @@ $(document).ready(function(){
     
   });
 
+$('.flex-footer > div').matchHeight();
 
 	function search_button() {
 		$('.form-search').on('click', function(e) {
@@ -162,7 +163,7 @@ $(document).ready(function(){
 		adaptiveHeight: true,
 		minSlides: item2,
 		maxSlides: item2,
-    // infiniteLoop: false,
+    infiniteLoop: false,
     slideWidth: 1000,
     responsive: true,
     slideMargin: 0,
@@ -183,7 +184,7 @@ $(document).ready(function(){
 			adaptiveHeight: true,
 			minSlides: item2,
 			maxSlides: item2,
-      // infiniteLoop: false,
+      infiniteLoop: false,
       slideWidth: 1000,
       responsive: true,
       slideMargin: 0,
