@@ -62,6 +62,9 @@ footer {
             line-height: 23px;
             color: #fff;
             font-weight: 300;
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }

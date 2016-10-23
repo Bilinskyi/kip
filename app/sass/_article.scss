@@ -11,6 +11,10 @@
     color: #ec6f06;
     font-size: 18px;
     line-height: 24px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .date {
     color: #003453;

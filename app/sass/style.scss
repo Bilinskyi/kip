@@ -36,6 +36,7 @@
 	font-size: 14px;
 	text-align: center;
 	border: 1px solid #ec6f06;
+	transition: .1s;
 	&.button-all {
 		width: 348px;
 		height: 49px;
@@ -46,6 +47,10 @@
 			width: 250px;
 		}
 	}
+		&:hover {
+			background: #ec6f06;
+			color: #fff;
+		}
 }
 
 
