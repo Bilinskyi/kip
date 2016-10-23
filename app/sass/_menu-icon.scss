@@ -24,7 +24,7 @@ $button-trans-delay: 0.3s;
   border: none;
   cursor: pointer;
   transition: background $button-trans-delay;
-  @media #{$bp-small} {
+  @media #{$ipad} {
         display: block;
   }
 }

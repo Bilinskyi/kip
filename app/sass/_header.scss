@@ -1,3 +1,6 @@
+.color-orange {
+	background-color: #ec6f06;
+}
 a.logo {
 	width: 100%;
 	height: 100px;
@@ -8,12 +11,15 @@ a.logo {
 	font-size: 48px;
 	color: white;
 	font-weight: 400;
-	@media #{$bp-medium} {
-		// width: 200px;
-	}
 	@media #{$bp-small} {
-		width: 100%;
+		width: auto;
+		max-width: 40%;
 		height: 110px;
+		text-align: left;
+		padding-left: 15px;
+	}
+	@media #{$bp-xsmall} {
+	      font-size: 32px;
 	}
 	span {
 		width: 100%;
@@ -24,20 +30,62 @@ a.logo {
 	}
 }
 
+.btn-close {
+	display: none;
+	@media #{$min-s} {
+		display: none !important; 
+	}
+	@media #{$bp-small} {
+		cursor: pointer;
+		text-align: center;
+		height: 33px;
+		width: 33px;
+		font-size: 16px;
+		line-height: 31px; 
+		color: #fff;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 3;
+		border: none;
+	}
+}
+
+.btn-search {
+	display: none;
+	@media #{$bp-large} {
+		cursor: pointer;
+		text-align: center;
+		height: 33px;
+		border: 1px solid #ec6f06;
+		color: #ec6f06;
+		font-size: 16px;
+		line-height: 31px;
+	}
+	@media #{$bp-small} {
+		color: #fff;
+		width: 33px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 3;
+		border: none;
+	}
+}
 
 .form-search {
 	position: relative;
+	z-index: 2;
 	background: #fff;
+	.active {
+		@media #{$bp-large} {
+		      display: block;
+		}
+	}
 	@media #{$min-s} {
 		max-width: 300px;
 		margin-top: 50px;
 		transform: translateY(-50%);
-	}
-	@media #{$bp-large} {
-		width: 30px;
-		cursor: pointer;
-		background: none;
-		text-align: center;
 	}
 	input:not([type=submit]) {
 		border: none;
@@ -50,11 +98,32 @@ a.logo {
 		font-weight: 400;
 		color: #000;
 		font-family: 'Open Sans', sans-serif;
+		@media #{$bp-x-large} {
+			display: inline-block !important;
+		}
 		@media #{$bp-large} {
-			border: 1px solid #ec6f06;
+			display: none;
+			top: 102%;
+			width: 200px;
+			position: relative;
+			z-index: 2;
+			padding-left: 15px;
+			background-color: transparent;
 		}
 		@media #{$bp-small} {
+			width: 50%;
+			display: block !important;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			padding-right: 33px;
+			top: auto;
+			border-color: #fff;
 			color: #fff;
+			&:hover,
+			&:focus {
+				border-color: #fff !important;
+			}
 		}
 		&:hover, 
 		&:focus {
@@ -73,51 +142,24 @@ a.logo {
 		z-index: 2;
 		cursor: pointer;
 		@media #{$bp-large} {
-			margin-left: auto;
-			margin-right: auto;
-			left: 0;
-			right: 0;
-		}
-	}
-	
-	@media #{$bp-small} {
-		position: absolute;
-		right: 15px;
-		bottom: 100%;
-		margin-bottom: 40px;		
-		background: none;
-		width: 35px;
-		cursor: pointer;
-		&:after {
-			content: '';
-			display: block;
-			position: absolute;
-			height: 150%;
-			width: 100%;
-			top: 0%;
-			z-index: 2;
-		}
-		&.act2 {
-			left: 0;
-			right: 0;
-			width: 100%;
-			&:after {
-				z-index: 0;
-			}
-			[type=submit] {
-				margin-right: 15px;
-			}
-		}
-		input:not([type=submit]) {
 			display: none;
 		}
-		[type=submit] {
-			background-color: #fff;
-			width: 35px;
-			border-radius: 5px;
-			float: right;
-			position: relative;
-		}
+	}
+	@media #{$bp-large} {
+		width: 33px;
+		height: 33px;
+		cursor: pointer;
+		text-align: center;
+	}
+	@media #{$bp-small} {
+		position: absolute;
+		width: auto;
+		background-color: transparent;
+		right: 15px;
+		left: 15px;
+		bottom: 100%;
+		margin-bottom: 40px;		
+		cursor: pointer;
 	}
 }
 
@@ -133,9 +175,6 @@ a.logo {
 	}
 	&:hover .phone-hide {
 		display: block;
-	}
-	@media #{$bp-medium} {
-		display: none;
 	}
 	.phone-main {
 		text-decoration: none;
@@ -237,6 +276,9 @@ a.logo {
 		position: relative;
 		border-left: 1px solid #e7e7e7;
 		transition: 0.1s;
+		@media #{$ipad} {
+			border-bottom: 1px solid #e7e7e7;
+		}
 		@media #{$bp-small} {
 			border-top: 1px solid #e7e7e7;
 			border-bottom: 1px solid #e7e7e7;
@@ -281,6 +323,7 @@ header {
 		overflow: hidden;
 		@media #{$bp-small} {
 			height: auto;
+			margin: 0;
 		}
 		&>div:nth-child(1) {
 			padding: 0 5px;
@@ -432,8 +475,11 @@ header {
 		position: relative;
 		background: #fff;
 		box-shadow: 0 3px 11px 0 rgba(0,0,0,.26);
-		@media #{$bp-small} {
+		@media #{$ipad} {
 			display: none;
+		}
+		@media #{$min-i} {
+			display: flex !important;
 		}
 		&:after {
 			content: '';
@@ -445,7 +491,7 @@ header {
 			top: 0;
 			background: #fff;
 			z-index: 1;
-			@media #{$bp-small} {
+			@media #{$ipad} {
 				display: none;
 			}
 		}
@@ -461,7 +507,7 @@ header {
 			height: 50px;
 			line-height: 50px;
 			transition: .1s;
-			@media #{$bp-small} {
+			@media #{$ipad} {
 				height: auto;
 				border-right: 1px solid #e7e7e7;
 				border-top: 1px solid #e7e7e7;
@@ -475,7 +521,7 @@ header {
 				background: url(../img/arrow-down.png) center 98% no-repeat;
 			}
 			&.arrow:hover .hide-nav {
-				@media #{$min-s} {
+				@media #{$min-i} {
 					opacity: 1;
 					visibility: visible;
 					transform: translate(0, 0);
@@ -504,7 +550,7 @@ header {
 				@media #{$bp-xxx-large} {
 					font-size: 14px;
 				}
-				@media #{$bp-small} {
+				@media #{$ipad} {
 					display: block;
 					border: none;
 				}
@@ -521,7 +567,7 @@ header {
 					background-position: center center;
 					background-repeat: no-repeat;
 					padding: 0 10px;
-					@media #{$bp-small} {
+					@media #{$ipad} {
 						height: 35px;
 						display: block;
 					}
@@ -543,7 +589,7 @@ header {
 			transform: translate(0, -100%);
 			transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
 			z-index: -1;
-			@media #{$bp-small} {
+			@media #{$ipad} {
 				display: none;
 				opacity: 1;
 				visibility: visible;
@@ -583,7 +629,7 @@ header {
 						padding: 0 10px;
 					}
 				}
-				@media #{$bp-small} {
+				@media #{$ipad} {
 					padding: 5px 10px 10px;
 					text-align: center;
 					img {
@@ -597,7 +643,7 @@ header {
 					font-weight: 400;
 					text-transform: uppercase;
 					margin-top: 20px;
-					@media #{$bp-small} {
+					@media #{$ipad} {
 						font-size: 14px;
 						cursor: pointer;
 						display: block;
@@ -608,7 +654,7 @@ header {
 					}
 				}
 				.list-wrapp {
-					@media #{$bp-small} {
+					@media #{$ipad} {
 						display: none;
 					}
 					a {
@@ -618,7 +664,7 @@ header {
 						text-transform: uppercase;
 						font-size: 14px;
 						text-decoration: none;
-						@media #{$bp-small} {
+						@media #{$ipad} {
 							background: #f5f5f5;
 						}
 					}
