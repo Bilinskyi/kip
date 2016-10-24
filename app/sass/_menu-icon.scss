@@ -6,6 +6,8 @@ $button-trans-delay: 0.3s;
 
 
 
+
+
 .cmn-toggle-switch {
   display: none;
   position: relative;
@@ -25,7 +27,24 @@ $button-trans-delay: 0.3s;
   cursor: pointer;
   transition: background $button-trans-delay;
   @media #{$ipad} {
-        display: block;
+    display: block;
+  }
+  &.xs-cat-mobile {
+    @media #{$bp-xsmall} {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      span {
+        top: ($button-height / 2) - (2 / 2);
+        height: 2px;
+        left: 0;
+        right: 0;
+        &:before,
+        &:after {
+          height: 2px;
+        }
+      }
+    }
   }
 }
 
@@ -42,6 +61,8 @@ $button-trans-delay: 0.3s;
   height: $bar-thickness;
   background: #ec6f06;
 }
+
+
 
 .cmn-toggle-switch span::before,
 .cmn-toggle-switch span::after {
@@ -63,7 +84,7 @@ $button-trans-delay: 0.3s;
 }
 
 .cmn-toggle-switch__htx {
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .cmn-toggle-switch__htx span {
@@ -86,7 +107,7 @@ $button-trans-delay: 0.3s;
 
 
 .cmn-toggle-switch__htx.active {
-  background-color: #c55b03;
+  background-color: transparent;
 }
 
 .cmn-toggle-switch__htx.active span {
@@ -96,13 +117,13 @@ $button-trans-delay: 0.3s;
 .cmn-toggle-switch__htx.active span::before {
   top: 0;
   transform: rotate(45deg);
-  background: #fff;
+  background: #ec6f06;
 }
 
 .cmn-toggle-switch__htx.active span::after {
   bottom: 0;
   transform: rotate(-45deg);
-  background: #fff;
+  background: #ec6f06;
 }
 
 .cmn-toggle-switch__htx.active span::before,

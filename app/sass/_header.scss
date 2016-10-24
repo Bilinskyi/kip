@@ -1,6 +1,58 @@
 .color-orange {
 	background-color: #ec6f06;
 }
+.phone-head {
+	display: none;
+	@media #{$bp-small} {
+		display: block;
+		font-size: 13px;
+		line-height: 22px;
+		@media #{$bp-xsmall} {
+			font-size: 10px;
+		}
+	}
+}
+.cat-mobile {
+	display: none;
+	cursor: pointer;
+	&:hover {
+		background: #f1f4f7;
+	}
+	&.active {
+		background: #f1f4f7;
+	}
+	@media #{$bp-small} {
+		display: block;
+		width: 70%;
+		float: left;
+		height: 67px;
+		border-top: 1px solid #e7e7e7;
+		border-bottom: 1px solid #e7e7e7;
+	}
+	@media #{$bp-xsmall} {
+		width: 55%;
+	}
+	.xs-cat-mobile {
+		margin: 0;
+		position: absolute;
+		left: 15px;
+		top: 17px;
+		z-index: 2;
+	}
+}
+.name-cat {
+	font-size: 17px;
+	color: #003453;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	@media #{$bp-xsmall} {
+		font-size: 14px;
+		text-align: right;
+		padding-right: 25px;
+	}
+}
 a.logo {
 	width: 100%;
 	height: 100px;
@@ -14,12 +66,12 @@ a.logo {
 	@media #{$bp-small} {
 		width: auto;
 		max-width: 40%;
-		height: 110px;
+		height: 80px;
 		text-align: left;
 		padding-left: 15px;
 	}
 	@media #{$bp-xsmall} {
-	      font-size: 32px;
+		font-size: 32px;
 	}
 	span {
 		width: 100%;
@@ -79,7 +131,7 @@ a.logo {
 	background: #fff;
 	.active {
 		@media #{$bp-large} {
-		      display: block;
+			display: block;
 		}
 	}
 	@media #{$min-s} {
@@ -120,6 +172,7 @@ a.logo {
 			top: auto;
 			border-color: #fff;
 			color: #fff;
+			padding-left: 0;
 			&:hover,
 			&:focus {
 				border-color: #fff !important;
@@ -158,7 +211,7 @@ a.logo {
 		right: 15px;
 		left: 15px;
 		bottom: 100%;
-		margin-bottom: 40px;		
+		margin-bottom: 28px;		
 		cursor: pointer;
 	}
 }
@@ -261,11 +314,13 @@ a.logo {
 
 .links-right {
 	@media #{$bp-small} {
-		float: left;
 		position: relative;
-		left: 50%;
 		overflow: hidden;
-		transform: translateX(-50%);
+		width: 30%;
+		float: right;
+	}
+	@media #{$bp-xsmall} {
+		width: 45%;
 	}
 	&>div {
 		float: left;
@@ -282,6 +337,9 @@ a.logo {
 		@media #{$bp-small} {
 			border-top: 1px solid #e7e7e7;
 			border-bottom: 1px solid #e7e7e7;
+			width: 50%;
+			height: 67px;
+			padding: 0 5px;
 		}
 		&:last-child {
 			border-right: 1px solid #e7e7e7;
@@ -305,6 +363,9 @@ a.logo {
 			display: block;
 			position: relative;
 			margin-bottom: 3px;
+			@media #{$bp-small} {
+				height: 32px;
+			}
 			img {
 				position: absolute;
 				margin: auto;
@@ -320,7 +381,7 @@ a.logo {
 header {
 	.middle-right-side {
 		height: 100px;
-		overflow: hidden;
+		// overflow: hidden;
 		@media #{$bp-small} {
 			height: auto;
 			margin: 0;
@@ -335,6 +396,7 @@ header {
 	@media #{$bp-small} {
 		.col-xs-12 {
 			padding: 0;
+			min-height: 0;
 		}
 	}
 	.button {
