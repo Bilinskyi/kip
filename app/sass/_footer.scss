@@ -1,14 +1,14 @@
 footer {
   background-color: #003453;
   padding: 25px 0 35px;
+  @media #{$bp-small} {
+        padding-bottom: 20px;
+  }
   .match-h {
     height: 100%;
     &.inline-block {
       display: inline-block;
       text-align: left;
-      @media #{$bp-small} {
-            text-align: center;
-      }
     }
   }
   .flex-footer {
@@ -19,7 +19,11 @@ footer {
       }
       @media #{$bp-small} {
             width: 100%;
-            text-align: center;
+            text-align: left !important;
+            margin-bottom: 10px;
+            &:last-child {
+              margin-bottom: 0;
+            }
       }
       &:nth-child(3) {
         border: 1px solid #335c75;
@@ -33,6 +37,13 @@ footer {
               position: relative;
               top: 50%;
               transform: translateY(-50%);
+        }
+        @media #{$bp-medium} {
+              text-align: center;
+              margin-bottom: 20px;
+        }
+        @media #{$bp-small} {
+              text-align: left;
         }
         b {
           color: rgba(255, 255, 255, 0.36);
@@ -69,9 +80,6 @@ footer {
         }
       }
       .contacts {
-        @media #{$bp-small} {
-              display: none;
-        }
         li {
           position: relative;
           padding-left: 33px;
@@ -80,9 +88,6 @@ footer {
           font-size: 14px;
           line-height: 19px;
           font-weight: 300;
-          @media #{$bp-small} {
-                display: inline-block;
-          }
           &:first-child i {left:2px;}
           i {
             position: absolute;

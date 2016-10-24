@@ -3,21 +3,18 @@ $(document).ready(function(){
 
 	$(window).on('load resize', function() {
 		menu_change();
-		placeholder_Menu_inside_cat()
-	});
-	
-	$(window).resize(function() {
-		resizeSlider();
-		resizeSlider2();
+		placeholder_Menu_inside_cat_Reset();
+
+		if ( $(window).width() > 1009 ) {
+			$('.hide-nav').removeAttr('style');
+		}
 
 	});
+	
 
 	$('.flex-footer > div').matchHeight();
 
-
-
-	
-	function placeholder_Menu_inside_cat() {
+	function placeholder_Menu_inside_cat_Reset() {
 		var cat_mobile = $('.xs-cat-mobile');
 		if ($(window).width() < 753) {
 			$('.slideToggle').attr('placeholder', '');
@@ -132,124 +129,81 @@ $(document).ready(function(){
 	});
 
 
-	function countItems() {
-		var width = $(window).width();
-		if (width < 400) {
-			item = 1;
-		} else if (width < 600) {
-			item = 2;
-		} else if (width < 768) {
-			item = 3;
-		} else if (width < 1000) {
-			item = 4;
-		} else if (width < 1200) {
-			item = 6;
-		} else if (width < 1320) {
-			item = 7;
-		} else if (width < 1600){
-			item = 8;
-		} else {
-			item = 10;
+
+	$('.owl-carousel').owlCarousel({
+		loop:true,
+		margin:10,
+		nav:true,
+		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:1
+			},
+			1000:{
+				items:1
+			}
 		}
-	};
-	countItems();
-
-	var carousel = $('.slider-2').bxSlider({
-		responsive:true,
-		adaptiveHeight: true,
-		minSlides: item,
-		maxSlides: item,
-		responsive: true,
-		slideWidth: 140,
-		slideMargin: 5,
-		moveSlides: 1,
-		pager: false,
-		autoHover: false,
-		speed: 500,
-		pause: 3000,
-		controls: true,
-		nextText:'<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-		prevText:'<i class="fa fa-chevron-left" aria-hidden="true"></i>'
 	});
 
-	function resizeSlider() {
-		countItems();
-		carousel.reloadSlider({
-			responsive:true,
-			adaptiveHeight: true,
-			minSlides: item,
-			maxSlides: item,
-			responsive: true,
-			slideWidth: 140,
-			slideMargin: 5,
-			moveSlides: 1,
-			pager: false,
-			autoHover: false,
-			speed: 500,
-			pause: 3000,
-			controls: true,
-			nextText:'<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-			prevText:'<i class="fa fa-chevron-left" aria-hidden="true"></i>'
-		});
-	}
-
-
-
-
-	function countItems2() {
-		var width = $(window).width();
-		if (width < 753) {
-			item2 = 1;
-		} else if (width < 1005) {
-			item2 = 2;
-		} else if (width >= 900) {
-			item2 = 3;
-		};
-	};
-	countItems2();
-	var carousel2 = $('.slider-3').bxSlider({
-		responsive:true,
-		adaptiveHeight: true,
-		minSlides: item2,
-		maxSlides: item2,
-		infiniteLoop: false,
-		slideWidth: 1000,
-		responsive: true,
-		slideMargin: 0,
-		moveSlides: 1,
-		pager: false,
-		autoHover: false,
-		speed: 500,
-		pause: 3000,
-		controls: true,
-		nextText:'<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-		prevText:'<i class="fa fa-chevron-left" aria-hidden="true"></i>'
+	$('.slider-2').owlCarousel({
+		loop:true,
+		margin:10,
+		nav:true,
+		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+		responsive:{
+			0:{
+				items:1
+			},
+			380: {
+				items: 2
+			},
+			500: {
+				items: 3
+			},
+			600: {
+				items: 4
+			},
+			783: {
+				items: 5
+			},
+			914: {
+				items: 6
+			},
+			1213: {
+				items:7
+			},
+			1334:{
+				items:8
+			},
+			1615:{
+				items:10
+			}
+		}
 	});
 
-	function resizeSlider2() {
-		countItems2();
-		carousel2.reloadSlider({
-			responsive:true,
-			adaptiveHeight: true,
-			minSlides: item2,
-			maxSlides: item2,
-			infiniteLoop: false,
-			slideWidth: 1000,
-			responsive: true,
-			slideMargin: 0,
-			moveSlides: 1,
-			pager: false,
-			autoHover: false,
-			speed: 500,
-			pause: 3000,
-			controls: true,
-			nextText:'<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-			prevText:'<i class="fa fa-chevron-left" aria-hidden="true"></i>'
-		});
-	}
 
+	$('.slider-3').owlCarousel({
+		loop:true,
+		margin:1,
+		nav:true,
+		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+		responsive:{
+			0:{
+				items:1
+			},
+			768:{
+				items:2
+			},
+			1020:{
+				items:3
+			}
+		}
+	});
 
-
+	
 
 	$('.grid i').on('click', function(e) {
 		e.preventDefault(); 
@@ -268,7 +222,9 @@ $(document).ready(function(){
 
 	$('.flex-footer-item h4').on('click', function(e) {
 		e.preventDefault(); 
-		$(this).next().slideToggle();
+		if ($(document).width() < 753) {
+			$(this).next().slideToggle();
+		}
 	});
 
 });
