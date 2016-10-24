@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 
-var img_pos = $('.catalog-name > img');
+	var img_pos = $('.catalog-name > img');
 
 	$(window).on('load resize', function() {
 		menu_change();
@@ -10,10 +10,11 @@ var img_pos = $('.catalog-name > img');
 
 		if ( $(window).width() > 1009 ) {
 			$('.hide-nav').removeAttr('style');
+			$('.navigation > li > a').removeClass('active');
 		}
 
 		if ( $(document).width() < 977 ) {
-				$('.about h3').after(img_pos);
+			$('.about h3').after(img_pos);
 		} else {
 			$('.catalog-name').append(img_pos);
 		}
@@ -144,7 +145,7 @@ var img_pos = $('.catalog-name > img');
 		loop:true,
 		margin:10,
 		nav:true,
-		  autoHeight: true,
+		autoHeight: true,
 		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
 		responsive:{
 			0:{
@@ -163,7 +164,7 @@ var img_pos = $('.catalog-name > img');
 		loop:true,
 		margin:10,
 		nav:true,
-		  autoHeight: true,
+		autoHeight: true,
 		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
 		responsive:{
 			0:{
@@ -201,7 +202,6 @@ var img_pos = $('.catalog-name > img');
 		loop:true,
 		margin:1,
 		nav:true,
-		  autoHeight: true,
 		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
 		responsive:{
 			0:{

@@ -201,7 +201,6 @@ var img_pos = $('.catalog-name > img');
 		loop:true,
 		margin:1,
 		nav:true,
-		  autoHeight: true,
 		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
 		responsive:{
 			0:{

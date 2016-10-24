@@ -88,7 +88,8 @@ $button-trans-delay: 0.3s;
 }
 
 .cmn-toggle-switch__htx span {
-  transition: background 0 $button-trans-delay;
+  transition: background 0;
+  transition-delay: $button-trans-delay;
 }
 
 .cmn-toggle-switch__htx span::before,
@@ -112,6 +113,7 @@ $button-trans-delay: 0.3s;
 
 .cmn-toggle-switch__htx.active span {
   background: none;
+  transition-delay: 0s;
 }
 
 .cmn-toggle-switch__htx.active span::before {
