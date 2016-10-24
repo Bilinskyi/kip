@@ -1,12 +1,21 @@
 
 $(document).ready(function(){
 
+
+var img_pos = $('.catalog-name > img');
+
 	$(window).on('load resize', function() {
 		menu_change();
 		placeholder_Menu_inside_cat_Reset();
 
 		if ( $(window).width() > 1009 ) {
 			$('.hide-nav').removeAttr('style');
+		}
+
+		if ( $(document).width() < 977 ) {
+				$('.about h3').after(img_pos);
+		} else {
+			$('.catalog-name').append(img_pos);
 		}
 
 	});
@@ -30,6 +39,7 @@ $(document).ready(function(){
 			$('.nav-main').before(cat_mobile);
 			$('.btn-search').addClass('active');
 			$('.btn-close').removeClass('active');
+			$('.sidebar-filter').removeAttr('style');
 		}
 	}
 
@@ -134,6 +144,7 @@ $(document).ready(function(){
 		loop:true,
 		margin:10,
 		nav:true,
+		  autoHeight: true,
 		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
 		responsive:{
 			0:{
@@ -152,6 +163,7 @@ $(document).ready(function(){
 		loop:true,
 		margin:10,
 		nav:true,
+		  autoHeight: true,
 		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
 		responsive:{
 			0:{
@@ -189,6 +201,7 @@ $(document).ready(function(){
 		loop:true,
 		margin:1,
 		nav:true,
+		  autoHeight: true,
 		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
 		responsive:{
 			0:{
@@ -226,5 +239,12 @@ $(document).ready(function(){
 			$(this).next().slideToggle();
 		}
 	});
+
+
+
+
+
+
+
 
 });

@@ -12,7 +12,7 @@
 .slider {
   position: relative;
   .slide-1 {
-    background: url(../img/sl-1.jpg) right top no-repeat;
+    background: url(../img/sl-1.jpg) right center no-repeat;
     background-size: cover; 
     @media #{$bp-small} {
       background: none;

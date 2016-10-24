@@ -577,13 +577,15 @@ header {
 			text-transform: lowercase;
 			flex-grow: 1;
 			text-align: center;
-			height: 50px;
 			color: #003453;
 			font-size: 16px;
 			font-weight: 600;
-			height: 50px;
 			line-height: 50px;
+			height: 50px;
 			transition: .1s;
+			&:first-child a {
+
+			}
 			@media #{$ipad} {
 				height: auto;
 				border-right: 1px solid #e7e7e7;
@@ -609,7 +611,7 @@ header {
 				height: 100%;
 				width: 100%;
 				line-height: 50px;
-				display: inline-block;
+				display: block;
 				text-decoration: none;
 				color: #003453;
 				font-size: 16px;
